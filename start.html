@@ -193,35 +193,14 @@
             justify-content: center;
         }
 
-        .logo-svg {
+        .logo-img {
             width: 200px;
             height: auto;
             filter: drop-shadow(0 10px 40px rgba(0,0,0,0.3));
             transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
         }
 
-        /* Garante que o SVG injetado tenha fundo transparente */
-        .logo-svg svg {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .logo-svg svg rect,
-        .logo-svg svg [class*="background"],
-        .logo-svg svg [class*="bg"],
-        .logo-svg svg [id*="background"],
-        .logo-svg svg [id*="bg"] {
-            display: none !important;
-        }
-
-        /* Garante que o g/path do escudo tenha cor fixa */
-        .logo-svg svg path,
-        .logo-svg svg polygon {
-            transition: none;
-        }
-
-        .logo-svg:hover { transform: scale(1.05); }
+        .logo-img:hover { transform: scale(1.05); }
 
         @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-30px); }
@@ -480,15 +459,11 @@
             align-items: center;
         }
 
-        .info-visual .inline-svg-container {
+        .info-visual img {
             width: 100%;
             max-width: 320px;
-            filter: drop-shadow(0 20px 40px rgba(29,53,87,0.15));
-        }
-
-        .info-visual .inline-svg-container svg {
-            width: 100%;
             height: auto;
+            filter: drop-shadow(0 20px 40px rgba(29,53,87,0.15));
         }
 
         /* Social Section */
@@ -625,15 +600,10 @@
             margin-bottom: 48px;
         }
 
-        .footer-brand .footer-logo-container {
+        .footer-brand .footer-logo {
             width: 55px;
             height: auto;
             margin-bottom: 20px;
-        }
-
-        .footer-brand .footer-logo-container svg {
-            width: 100%;
-            height: auto;
         }
 
         .footer-brand p { font-size: 14px; line-height: 1.7; max-width: 300px; }
@@ -739,29 +709,7 @@
 
         @media (max-width: 480px) {
             .social-grid { grid-template-columns: 1fr; }
-            .logo-svg { width: 150px; }
-        }
-
-        /* Loading state para o logo */
-        .logo-loading {
-            width: 200px;
-            height: 230px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo-loading .spinner {
-            width: 40px;
-            height: 40px;
-            border: 3px solid rgba(255,255,255,0.2);
-            border-top-color: var(--white);
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+            .logo-img { width: 150px; }
         }
     </style>
 </head>
@@ -775,12 +723,12 @@
                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
                     <polyline points="9 22 9 12 15 12 15 22"/>
                 </svg>
-                Intranet
+                Acesso à Intranet
             </a>
             <div class="top-bar-links">
                 <a href="#about">Sobre</a>
                 <a href="#social">Redes Sociais</a>
-                <a href="https://aos.org.br" target="_blank">Torne-se um associado</a>
+                <a href="https://aos.org.br" target="_blank">Site Oficial</a>
             </div>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
                 <span></span><span></span><span></span>
@@ -792,8 +740,8 @@
     <section class="hero">
         <div class="hero-grid-bg"></div>
         <div class="hero-content">
-            <div class="logo-container" id="heroLogo">
-                <div class="logo-loading"><div class="spinner"></div></div>
+            <div class="logo-container">
+                <img src="https://app-algoritmo.github.io/aos/logo.png" alt="Logo AOS" class="logo-img">
             </div>
             <h1 class="hero-title">Associação dos Oficiais de Saúde</h1>
             <p class="hero-subtitle">
@@ -886,8 +834,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="info-visual reveal" id="infoLogo">
-                    <div class="logo-loading"><div class="spinner"></div></div>
+                <div class="info-visual reveal">
+                    <img src="https://app-algoritmo.github.io/aos/logo.png" alt="Logo AOS" loading="lazy">
                 </div>
             </div>
         </div>
@@ -941,14 +889,14 @@
             <p class="cta-text">Junte-se à Associação dos Oficiais de Saúde e fortaleça a categoria dos profissionais de saúde da PMESP.</p>
             <div class="cta-buttons">
                 <a href="https://aos.org.br" target="_blank" class="btn-primary">
-                    Associar-se
+                    Conheça a AOS
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"/>
                         <polyline points="12 5 19 12 12 19"/>
                     </svg>
                 </a>
                 <a href="https://sites.google.com/aos.org.br/aos/p%C3%A1gina-inicial" target="_blank" class="btn-secondary">
-                    Benefícios
+                    Acesse a Intranet
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
                         <polyline points="9 22 9 12 15 12 15 22"/>
@@ -962,9 +910,7 @@
     <footer class="footer">
         <div class="footer-grid">
             <div class="footer-brand">
-                <div class="footer-logo-container" id="footerLogo">
-                    <div class="logo-loading" style="width:55px;height:65px;"><div class="spinner"></div></div>
-                </div>
+                <img src="https://app-algoritmo.github.io/aos/logo.png" alt="Logo AOS" class="footer-logo" loading="lazy">
                 <p>Associação dos Oficiais de Saúde da Polícia Militar do Estado de São Paulo. Compromisso, dedicação e defesa dos profissionais de saúde militar.</p>
             </div>
             <div class="footer-col">
@@ -984,18 +930,12 @@
             <div class="footer-col">
                 <h4>Contato</h4>
                 <a href="https://aos.org.br" target="_blank">aos.org.br</a>
-                <a href="mailto:aos@aos.org.br">aos@aos.org.br</a>
+                <a href="mailto:contato@aos.org.br">contato@aos.org.br</a>
                 <a href="#">São Paulo, SP</a>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 AOS — Associação dos Oficiais de Saúde da PMESP. Todos os direitos reservados.</p>
-            <a href="https://app-algoritmo.github.io/digital-solutions" 
-   target="_blank" 
-   rel="noopener noreferrer" 
-   style="margin: 0 10px; text-decoration: none; color: #D4AF37;">
-   Developed by Digital Solutions
-</a>
             <div class="footer-social-links">
                 <a href="https://www.instagram.com/aospmesp/" target="_blank" aria-label="Instagram">
                     <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
@@ -1014,105 +954,6 @@
     </footer>
 
     <script>
-        /**
-         * Carrega o SVG da AOS, remove o fundo e injeta inline
-         * Permite controlar cores e transparência via CSS
-         */
-        async function loadAndInjectSVG(url, targetId, options = {}) {
-            const { size = '200px', darkShield = false } = options;
-            const target = document.getElementById(targetId);
-            if (!target) return;
-
-            try {
-                const response = await fetch(url);
-                const text = await response.text();
-                
-                // Parse do SVG
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(text, 'image/svg+xml');
-                const svgEl = doc.querySelector('svg');
-                
-                if (!svgEl) throw new Error('SVG não encontrado');
-
-                // Remove background/fundo
-                svgEl.querySelectorAll('rect').forEach(rect => {
-                    const w = parseFloat(rect.getAttribute('width') || 0);
-                    const h = parseFloat(rect.getAttribute('height') || 0);
-                    const fill = rect.getAttribute('fill') || '';
-                    // Remove retângulos grandes que são fundo
-                    if (w > 100 || h > 100 || fill === 'white' || fill === '#ffffff' || fill === '#fff' || fill === '#f0f0f0') {
-                        rect.remove();
-                    }
-                });
-
-                // Remove qualquer elemento com classes de background
-                svgEl.querySelectorAll('[class*="background"], [class*="bg"], [class*="fundo"]').forEach(el => el.remove());
-                svgEl.querySelectorAll('[id*="background"], [id*="bg"], [id*="fundo"]').forEach(el => el.remove());
-
-                // Se quiser escudo mais escuro ou manter original
-                if (darkShield) {
-                    svgEl.querySelectorAll('path, polygon').forEach(shape => {
-                        const fill = shape.getAttribute('fill');
-                        if (fill && (fill === '#1d3557' || fill === '#1D3557' || fill.includes('1d3557') || fill.includes('234068'))) {
-                            shape.setAttribute('fill', '#152a45');
-                        }
-                    });
-                }
-
-                // Garante que não há xmlns conflicts
-                svgEl.removeAttribute('xmlns:xlink');
-                
-                // Adiciona atributos para responsividade
-                svgEl.setAttribute('width', '100%');
-                svgEl.setAttribute('height', '100%');
-                svgEl.style.display = 'block';
-
-                // Cria container
-                const container = document.createElement('div');
-                container.className = target.classList.contains('footer-logo-container') ? 'footer-logo-container' : '';
-                container.style.width = targetId === 'footerLogo' ? '55px' : (targetId === 'infoLogo' ? '100%; max-width: 320px' : '200px');
-                if (targetId !== 'footerLogo') {
-                    container.style.maxWidth = targetId === 'infoLogo' ? '320px' : 'none';
-                }
-                container.style.height = 'auto';
-                container.innerHTML = '';
-                container.appendChild(svgEl);
-
-                // Limpa loading e adiciona SVG
-                target.innerHTML = '';
-                target.appendChild(container);
-
-            } catch (error) {
-                console.error('Erro ao carregar SVG:', error);
-                target.innerHTML = `
-                    <div style="text-align:center; padding: 20px; color: rgba(255,255,255,0.7); font-size: 13px;">
-                        <svg width="${targetId === 'footerLogo' ? '55' : '200'}" viewBox="0 0 200 230" style="max-width:100%;">
-                            <path d="M100 10 L190 50 C195 75 193 115 180 160 C165 205 140 240 100 265 C60 240 35 205 20 160 C7 115 5 75 10 50 L100 10Z" fill="#1d3557"/>
-                            <polygon points="100,40 128,85 100,130 72,85" fill="#ffffff"/>
-                            <polygon points="58,108 86,153 58,198 30,153" fill="#ffffff"/>
-                            <polygon points="100,130 128,175 100,220 72,175" fill="#ffffff"/>
-                            <polygon points="142,108 170,153 142,198 114,153" fill="#ffffff"/>
-                            <polygon points="100,180 128,220 100,248 72,220" fill="#ffffff"/>
-                        </svg>
-                    </div>
-                `;
-            }
-        }
-
-        // Carrega o logo em todos os pontos
-        document.addEventListener('DOMContentLoaded', () => {
-            const pngUrl = 'https://app-algoritmo.github.io/aos/logo.png';
-            
-            // Hero logo
-            loadAndInjectPNG(pngUrl, 'heroLogo', { size: '200px' });
-            
-            // Info section logo
-            loadAndInjectPNG(pngUrl, 'infoLogo', { size: '320px' });
-            
-            // Footer logo
-            loadAndInjectPNG(pngUrl, 'footerLogo', { size: '55px' });
-        });
-
         // Scroll reveal animation
         const revealElements = document.querySelectorAll('.reveal');
         const revealObserver = new IntersectionObserver((entries) => {
