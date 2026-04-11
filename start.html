@@ -760,6 +760,162 @@
             stroke-width: 2;
         }
 
+        /* YouTube Section */
+        .youtube-section {
+            padding: 100px 24px;
+            background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+        }
+
+        .youtube-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .youtube-video {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(29,53,87,0.15);
+            margin-bottom: 32px;
+            background: var(--gray-100);
+        }
+
+        .youtube-video iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .youtube-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--primary);
+            color: var(--white);
+            padding: 16px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+            box-shadow: 0 8px 30px rgba(29,53,87,0.25);
+        }
+
+        .youtube-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(29,53,87,0.35);
+            background: var(--primary-light);
+        }
+
+        .youtube-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+            transition: transform 0.3s;
+        }
+
+        .youtube-btn:hover svg { transform: scale(1.15); }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 24px;
+            background: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: stretch;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            padding: 24px;
+            background: var(--gray-50);
+            border-radius: 16px;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .contact-item:hover {
+            border-color: var(--primary);
+            transform: translateX(4px);
+            box-shadow: 0 8px 24px rgba(29,53,87,0.08);
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--white);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .contact-details h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .contact-details p {
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        .contact-details a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .contact-details a:hover {
+            color: var(--primary-light);
+            text-decoration: underline;
+        }
+
+        .contact-map {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 16px 48px rgba(29,53,87,0.12);
+            min-height: 400px;
+            border: 1px solid var(--gray-200);
+        }
+
+        .contact-map iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            border: none;
+            display: block;
+        }
+
         /* CTA Section */
         .cta-section {
             padding: 100px 24px;
@@ -908,6 +1064,7 @@
             .info-visual { order: -1; }
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
             .partner-card { width: 230px; }
+            .contact-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
@@ -924,6 +1081,8 @@
             .footer-bottom { flex-direction: column; text-align: center; }
             .hero-cta-group { flex-direction: column; align-items: center; }
             .partner-card { width: 200px; padding: 24px 18px; }
+            .contact-map { min-height: 300px; }
+            .contact-map iframe { min-height: 300px; }
         }
 
         @media (max-width: 480px) {
@@ -951,6 +1110,7 @@
                 <a href="#social">Redes Sociais</a>
                 <a href="#partners">Parceiros</a>
                 <a href="https://forms.gle/CtnQ57RKfyGwvFmL9" target="_blank">Torne-se um Associado</a>
+                <a href="#contato">Contato</a>
             </div>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
                 <span></span><span></span><span></span>
@@ -1036,7 +1196,7 @@
                 <span class="section-label">Quem Somos</span>
                 <h2 class="section-title">Compromisso com a Saúde Militar</h2>
                 <p class="section-desc">
-                    A AOS representa e defende os interesses dos oficiais de saúde da Polícia Militar do Estado de São Paulo e profissionais da saúde civis que buscam rigos técnico, ética e networking de alto impacto.
+                    A AOS representa e defende os interesses dos oficiais de saúde da Polícia Militar do Estado de São Paulo e profissionais da saúde civis que buscam rigor técnico, ética e networking de alto impacto.
                 </p>
             </div>
             <div class="features-grid">
@@ -1081,7 +1241,7 @@
                 <div class="info-content reveal">
                     <h3>Uma história de dedicação à saúde da PMESP</h3>
                     <p>A Associação dos Oficiais de Saúde da Polícia Militar do Estado de São Paulo (AOS) foi fundada em 1951 com o propósito de unir e fortalecer a categoria dos profissionais de saúde que atuam na corporação.</p>
-                   <p>com orgulho, mantemos nossa sede própria em Säo Paulo, um espaço dedicado ao suporte de nossos membros e ao fortalecimento da nossa categoria.</p>
+                   <p>Com orgulho, mantemos nossa sede própria em São Paulo, um espaço dedicado ao suporte de nossos membros e ao fortalecimento da nossa categoria.</p>
                     <p>Trabalhamos incansavelmente para garantir melhores condições de trabalho, valorização profissional e suporte jurídico aos nossos associados.</p>
                     <div class="stats-row">
                         <div class="stat-item">
@@ -1157,7 +1317,6 @@
         </div>
         <div class="partners-track-wrapper">
             <div class="partners-track" id="partnersTrack">
-                <!-- 7 partners (original) -->
                 <a href="https://portal.crfsp.org.br/" target="_blank" class="partner-card">
                     <div class="partner-initials">CRF</div>
                     <div class="partner-name">CRF-SP</div>
@@ -1202,7 +1361,7 @@
                 </a>
                 <a href="https://grazzioli.com.br/" target="_blank" class="partner-card">
                     <div class="partner-initials">G&M</div>
-                    <div class="partner-name">Graziolli & Magri</div>
+                    <div class="partner-name">Grazzoli & Magri</div>
                     <div class="partner-desc">Advogados</div>
                     <span class="partner-visit">Visitar site <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
                 </a>
@@ -1251,10 +1410,85 @@
                 </a>
                 <a href="https://grazzioli.com.br/" target="_blank" class="partner-card">
                     <div class="partner-initials">G&M</div>
-                    <div class="partner-name">Graziolli & Magri</div>
+                    <div class="partner-name">Grazzoli & Magri</div>
                     <div class="partner-desc">Advogados</div>
                     <span class="partner-visit">Visitar site <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube Section -->
+    <section class="youtube-section" id="youtube">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Vídeos</span>
+                <h2 class="section-title">Canal no YouTube</h2>
+                <p class="section-desc">Confira nossos vídeos, eventos e conteúdos sobre saúde militar e bem-estar.</p>
+            </div>
+            <div class="youtube-wrapper reveal">
+                <div class="youtube-video">
+                    <iframe src="https://www.youtube.com/embed/videoseries?list=UUQYhJQYhJQYhJQYhJQYhJQY" title="AOS PMESP YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <a href="https://www.youtube.com/@AOSPMESP" target="_blank" class="youtube-btn">
+                    <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    Visite nosso canal no YouTube
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contato">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Contato</span>
+                <h2 class="section-title">Entre em Contato</h2>
+                <p class="section-desc">Estamos à disposição para atendê-lo. Entre em contato por telefone, e-mail ou visite nossa sede.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Telefones</h4>
+                            <p><a href="tel:+551122817648">+55 (11) 2281-7648</a></p>
+                            <p><a href="https://wa.me/551194328465" target="_blank">WhatsApp: (11) 94328-465</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>E-mail</h4>
+                            <p><a href="mailto:aos@aos.org.br">aos@aos.org.br</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Horário de Atendimento</h4>
+                            <p>Segunda à Sexta: 9h às 13h</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Endereço</h4>
+                            <p>Rua Conselheiro Saraiva, 306, conj. 74<br>Santana — São Paulo/SP</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map reveal">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1!2d-46.6298!3d-23.5052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMwJzE4LjgiUyA0NsKwMzcnNDcuMyJX!5e0!3m2!1spt-BR!2sbr!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
         </div>
     </section>
@@ -1290,7 +1524,7 @@
             </div>
             <div class="footer-col">
                 <h4>Links</h4>
-                <a href="#partners" target="_blank">Parceiros</a>
+                <a href="#partners">Parceiros</a>
                 <a href="https://sites.google.com/aos.org.br/aos/intranet" target="_blank">Intranet</a>
                 <a href="#about">Sobre a AOS</a>
                 <a href="#social">Redes Sociais</a>
@@ -1311,7 +1545,17 @@
             </div>
             <div class="footer-col">
                 <h4>Contato</h4>
-                <a href="mailto:aos@aos.org.br">aos@aos.org.br 
+                <a href="mailto:aos@aos.org.br">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 6px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    aos@aos.org.br
+                </a>
+                <a href="tel:+551122817648">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 6px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    (11) 2281-7648
+                </a>
+                <a href="https://wa.me/551194328465" target="_blank">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 6px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    WhatsApp: 94328-465
                 </a>
             </div>
         </div>
